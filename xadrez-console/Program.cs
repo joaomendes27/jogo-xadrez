@@ -8,19 +8,18 @@ namespace xadrez_console
     {
         static void Main(string[] args)
         {
+
             try
             {
                 PartidaDeXadrez partida = new PartidaDeXadrez();
 
                 while (!partida.terminada)
                 {
+
                     try
                     {
                         Console.Clear();
-                        Tela.imprimirTabuleiro(partida.tab);
-                        Console.WriteLine();
-                        Console.WriteLine("Turno: " + partida.turno);
-                        Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
+                        Tela.imprimirPartida(partida);
 
                         Console.WriteLine();
                         Console.Write("Origem: ");
@@ -45,8 +44,8 @@ namespace xadrez_console
                         Console.ReadLine();
                     }
                 }
-            }
 
+            }
             catch (TabuleiroException e)
             {
                 Console.WriteLine(e.Message);
